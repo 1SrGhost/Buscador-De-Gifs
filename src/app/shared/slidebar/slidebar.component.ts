@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GifsService } from '../../gifs/service/gifs.service';
 import { AppComponent } from '../../app.component';
+import { BusquedaComponent } from '../../gifs/busqueda/busqueda.component';
 
 @Component({
   selector: 'app-slidebar',
@@ -17,5 +18,8 @@ export class SlidebarComponent{
   constructor(private gifService:GifsService) {  }
 
   
-  
+  buscar(termino:string){
+      console.log(termino);
+      this.gifService.buscarGifs(termino);
+  }
 }
